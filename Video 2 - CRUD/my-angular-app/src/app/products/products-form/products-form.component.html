@@ -1,0 +1,12 @@
+<h2>{{title}}</h2>
+
+<form (submit)="saveChanges()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="form.controls.name"  />
+    </mat-form-field>
+    <div>
+        <button type="submit" mat-flat-button>Save Changes</button>
+        <a mat-stroked-button routerLink="/products">Cancel</a>
+    </div>
+</form>
