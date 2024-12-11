@@ -1,0 +1,17 @@
+<h2>{{title}}</h2>
+
+<form (submit)="saveChanges()" [formGroup]="form">
+    <mat-form-field appearance="outline">
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="form.controls.name"  />
+        <mat-error>{{getErrorMessagesOfName()}}</mat-error>
+
+        @if(form.controls.name.pending){
+            <mat-spinner [diameter]="16" matSuffix style="margin-right: 1rem;"></mat-spinner>
+        }
+    </mat-form-field>
+    <div>
+        <button type="submit" [disabled]="form.invalid || form.pending" mat-flat-button>Save Changes</button>
+        <a mat-stroked-button routerLink="/products">Cancel</a>
+    </div>
+</form>

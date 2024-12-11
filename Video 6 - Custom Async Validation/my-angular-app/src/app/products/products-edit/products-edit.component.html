@@ -1,0 +1,7 @@
+
+@if (laptop){
+    <app-display-errors [errors]="errors"></app-display-errors>
+    <app-products-form title="Edit Laptop" [model]="laptop" (formPosted)="saveChanges($event)"></app-products-form>
+} @else {
+    <app-loading></app-loading>
+}
